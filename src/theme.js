@@ -24,7 +24,12 @@ const theme = createTheme({
     },
     subtitle1: {
       fontWeight: "400",
-      fontSize: "1em"
+      fontSize: "1.2em"
+    },
+    subtitle2: {
+      fontWeight: 500,
+      fontSize: "1.4em",
+      color: '#D8BF95'
     }
   }
 })

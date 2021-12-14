@@ -1,41 +1,61 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
-import { Typography, Button } from "@mui/material";
+import { Link, Button } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    height: "76px",
+    height: "80px",
     display: 'flex',
     alignItems: 'center',
     lineHeight: '19px',
-    zIndex: 100
+    zIndex: 100,
   },
   container: {
-    width: "60%",
     margin: "auto",
     display: "flex",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    [theme.breakpoints.up("xl")]: {
+      width: "70%",
+    },
+    [theme.breakpoints.up("md")]: {
+      width: "60%",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "90%",
+    }
   },
   logo: {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: "flex-start",
-    "& > img": {
-      width: "35px",
-      height: "50px",
-      paddingRight: "0.5rem"
-    },
+    top: theme.spacing(3)
+  },
+  image: {
+    width: "54px",
+    height: "70px",
+    paddingRight: theme.spacing(2)
   },
   text: {
-    fontWeight: "700",
-    color: theme.palette.text.primary
+    height: "23px",
+    width: "87px"
   },
   discord: {
     display: "flex",
     justifyContent: "flex-end",
+    margin: "auto",
     fontWeight: "600",
-    height: "40px"
+    fontSize: "2rem",
+    height: "40px",
+    "& > img": {
+      width: "20px",
+      paddingRight: theme.spacing(1)
+    }
+  },
+  link: {
+    textDecoration: "none",
+    alignSelf: 'center',
+    textAlign: "center",
   }
 }))
 
@@ -46,19 +66,21 @@ const Header = () => {
     <div className={classes.root}>
       <div className={classes.container}>
         <div className={classes.logo}>
-          <img src="/images/logo.png" alt=""></img>
-          <Typography className={classes.text}>
-            S T A G
-          </Typography>
+          <img className={classes.image} src="/images/stag-logo-light.png" alt=""></img>
+          <img className={classes.text} src="/images/stag-logo-text-light.png" alt=""></img>
         </div>
-
-        <Button
-          className={classes.discord}
-          variant="contained"
-          color="secondary"
-        >
-          Join Discord
-        </Button>
+        
+        <a className={classes.link} href="https://discord.com/invite/StagDAO" target="_blank">
+          <Button
+            className={classes.discord}
+            variant="contained"
+            color="secondary"
+            style={{textTransform: 'none'}}
+          >
+            <img alt="" src="/images/discord.png"></img>
+              Join Discord
+          </Button>
+        </a>
       </div>
     </div>
   )

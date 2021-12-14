@@ -1,16 +1,20 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
-import { Image, Button } from "@mui/material";
 import Hero from "../Sections/Hero";
 import Elk from "../Sections/Elk";
 import Summary from "../Sections/Summary";
 import Waitlist from "../Sections/Waitlist";
+import Footer from "../Layout/Footer";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  steps: {
     width: "100%",
     display: "flex",
+    flexDirection: "column",
     height: "76px"
+  },
+  section: {
+    display: "block"
   }
 }))
 
@@ -18,14 +22,24 @@ const Steps = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Hero />
+    <div className={classes.steps}>
+      <div className={classes.section}>
+        <Hero />
+      </div>
 
-      <Elk />
+      <div className={classes.section}>
+        <Elk />
+      </div>
 
-      <Summary />
+      <div className={classes.section}>
+        <Summary />
+      </div>
 
-      <Waitlist />
+      <div className={classes.section}>
+        <Waitlist />
+      </div>
+
+      <Footer />
     </div>
   )
 }

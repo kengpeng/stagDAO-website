@@ -4,17 +4,20 @@ import { Box, Button, Typography } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    position: "absolute",
-    top: 0,
-    left: 0,
+    marginTop: "-80px",
+    // left: 0,
     width: "100%",
+    padding: "none !important",
     background: "linear-gradient(122.36deg, #64514E 23.36%, #D8BF95 115.61%)",
     zIndex: 10,
     [theme.breakpoints.up("md")]: {
       height: "700px",
     },
-    [theme.breakpoints.up("xxl")]: {
+    [theme.breakpoints.up("xl")]: {
       height: "900px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "1000px",
     },
   },
   background: {
@@ -25,18 +28,33 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     position: "relative",
-    width: "60%",
     margin: "auto",
     height: "100%",
     display: "flex",
     flexDirection: "row",
     paddingBottom: "0 !important",
+    [theme.breakpoints.up("xl")]: {
+      width: "70%",
+    },
+    [theme.breakpoints.up("md")]: {
+      width: "60%",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "90%",
+      minHeight: "900px"
+    }
   },
   leftContent: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
-    width: "60%",
+    [theme.breakpoints.up("md")]: {
+      justifyContent: "center",
+      width: "60%",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "90%",
+      paddingTop: "200px"
+    },
     color: "#fff",
   },
   rightContent: {
@@ -46,7 +64,11 @@ const useStyles = makeStyles((theme) => ({
     "& > img": {
       width: "545px",
       height: "641px",
-      marginBottom: "-4px"
+      marginBottom: "-4px",
+      [theme.breakpoints.down("md")]: {
+        width: "275px",
+        height: "321px",
+      },
     }
   },
   button: {
@@ -61,7 +83,7 @@ const Hero = () => {
 
   return (
     <div className={classes.root}>
-      <img className={classes.background} src="/images/hero-background.png"></img>
+      <img alt="" className={classes.background} src="/images/hero-background.png"></img>
 
       <Box className={classes.container}>
         <Box className={classes.leftContent}>
@@ -82,7 +104,7 @@ const Hero = () => {
         </Box>
 
         <Box className={classes.rightContent}>
-          <img className={classes.stag} src="/images/stag-gold.png"></img>
+          <img alt="" className={classes.stag} src="/images/stag-gold.png"></img>
         </Box>
       </Box>
 
