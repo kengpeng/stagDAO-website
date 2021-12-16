@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./Header";
-import Footer from "./Footer";
 import Steps from "../Steps";
 import { makeStyles } from "@mui/styles";
 
@@ -13,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100%',
     display: 'flex',
     flexDirection: 'column',
+    overflowX: 'hidden',
     justifyContent: 'flex-start',
     padding: "0"
   },

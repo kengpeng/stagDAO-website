@@ -5,11 +5,16 @@ import { Box, Typography } from "@mui/material";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.secondary.main,
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("lg")]: {
       width: "100%",
       height: "400px",
       display: "flex",
-    }
+    },
+    [theme.breakpoints.down("lg")]: {
+      paddingTop: theme.spacing(6),
+      paddingBottom: theme.spacing(6),
+      height: "auto",
+    },
   },
   container: {
     margin: "auto",

@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
-import { Typography, Link, Box, Button } from "@mui/material";
+import { Typography, Link, Box } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,17 +14,36 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     height: "200px",
-    width: "60%",
     margin: "auto",
     display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center"
+    [theme.breakpoints.up("xl")]: {
+      justifyContent: "space-between",
+      alignItems: "center",
+      width: "70%",
+    },
+    [theme.breakpoints.up("sm")]: {
+      justifyContent: "space-between",
+      alignItems: "center",
+      width: "60%",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "90%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: theme.spacing(3),
+      flexDirection: "column",
+      alignItems: "left",
+    },
   },
   logo: {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: "flex-start",
-    top: theme.spacing(3)
+    top: theme.spacing(3),
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: theme.spacing(2),
+      paddingBottom: theme.spacing(2)
+    }
   },
   image: {
     width: "54px",
@@ -32,7 +51,10 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: theme.spacing(2)
   },
   title: {
-    paddingBottom: theme.spacing(1.5)
+    paddingBottom: theme.spacing(1.5),
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: theme.spacing(2)
+    }
   },
   text: {
     height: "23px",
@@ -47,6 +69,17 @@ const useStyles = makeStyles((theme) => ({
     "& > a > img": {
       width: "30px",
       paddingRight: theme.spacing(1)
+    }
+  },
+  social: {
+    [theme.breakpoints.down("sm")]: {
+      display: "block",
+    }
+  },
+  docs: {
+    [theme.breakpoints.down("sm")]: {
+      display: "block",
+      paddingBottom: theme.spacing(3)
     }
   }
 }))
@@ -78,14 +111,14 @@ const Footer = () => {
 
         <Box className={classes.docs}>
           <Typography className={classes.title} variant="subtitle1">
-            Read
+            Reading
           </Typography>
-          <Link target="_blank" rel="noreferrer" href="https://discord.com/invite/StagDAO">
+          <Link target="_blank" rel="noreferrer" href="https://documents.stagdao.finance/start">
             <Typography>
               Documentation
             </Typography>
           </Link>
-          <Link target="_blank" rel="noreferrer" href="https://twitter.com/stagDAO">
+          <Link target="_blank" rel="noreferrer" href="https://medium.com/stag-dao">
             <Typography>
               Medium
             </Typography>

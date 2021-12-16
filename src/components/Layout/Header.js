@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
-import { Link, Button } from "@mui/material";
+import { Button } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,11 +15,8 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     display: "flex",
     justifyContent: "space-between",
-    [theme.breakpoints.up("xl")]: {
-      width: "70%",
-    },
     [theme.breakpoints.up("md")]: {
-      width: "60%",
+      width: "70%",
     },
     [theme.breakpoints.down("md")]: {
       width: "90%",
@@ -29,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: "flex-start",
-    top: theme.spacing(3)
   },
   image: {
     width: "54px",
@@ -70,7 +66,7 @@ const Header = () => {
           <img className={classes.text} src="/images/stag-logo-text-light.png" alt=""></img>
         </div>
         
-        <a className={classes.link} href="https://discord.com/invite/StagDAO" target="_blank">
+        <a className={classes.link} rel="noopener noreferrer" href="https://discord.com/invite/StagDAO" target="_blank">
           <Button
             className={classes.discord}
             variant="contained"

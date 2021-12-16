@@ -5,7 +5,6 @@ import { Box, Button, Typography } from "@mui/material";
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: "-80px",
-    // left: 0,
     width: "100%",
     padding: "none !important",
     background: "linear-gradient(122.36deg, #64514E 23.36%, #D8BF95 115.61%)",
@@ -21,10 +20,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   background: {
-    width: "40%",
     padding: "4rem",
     bottom: "0",
-    position: "absolute"
+    position: "absolute",
+    [theme.breakpoints.up("md")]: {
+      width: "50%",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "80%",
+      height: "1000px",
+    },
   },
   container: {
     position: "relative",
@@ -33,11 +38,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
     paddingBottom: "0 !important",
-    [theme.breakpoints.up("xl")]: {
-      width: "70%",
-    },
     [theme.breakpoints.up("md")]: {
-      width: "60%",
+      width: "70%",
     },
     [theme.breakpoints.down("md")]: {
       width: "90%",
@@ -65,7 +67,11 @@ const useStyles = makeStyles((theme) => ({
       width: "545px",
       height: "641px",
       marginBottom: "-4px",
-      [theme.breakpoints.down("md")]: {
+      [theme.breakpoints.down("lg")]: {
+        width: "375px",
+        height: "471px",
+      },
+      [theme.breakpoints.down("sm")]: {
         width: "275px",
         height: "321px",
       },
@@ -73,8 +79,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     width: "130px",
-    textDecoration: "lowercase",
-    top: "2rem"
+    top: theme.spacing(5),
   }
 }))
 
@@ -98,6 +103,8 @@ const Hero = () => {
             className={classes.button}
             variant="contained"
             color="secondary"
+            style={{textTransform: 'none'}}
+            href="#summary"
           >
             Learn more
           </Button>

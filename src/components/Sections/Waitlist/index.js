@@ -10,23 +10,23 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
       height: "400px",
       display: "flex"
-    }
+    },
+    [theme.breakpoints.down("lg")]: {
+      paddingTop: theme.spacing(6),
+      paddingBottom: theme.spacing(6),
+      height: "auto",
+    },
   },
   container: {
     position: "relative",
     [theme.breakpoints.up("md")]: {
-      width: "70%",
       margin: "auto",
+      width: "70%",
       display: "flex",
       flexDirection: "row"
     },
-    [theme.breakpoints.up("md")]: {
-      width: "60%",
-    },
-    [theme.breakpoints.up("xl")]: {
-      width: "70%",
-    },
     [theme.breakpoints.down("md")]: {
+      margin: "auto",
       paddingTop: theme.spacing(6),
       paddingBottom: theme.spacing(6),
       width: "90%",
@@ -46,27 +46,29 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main
   },
   leftContainer: {
+    margin: "auto",
     [theme.breakpoints.up("md")]: {
+      padding: theme.spacing(4),
       width: "50%",
     },
     [theme.breakpoints.down("md")]: {
+      textAlign: "center",
       width: "100%",
     },
-    margin: "auto",
-    padding: theme.spacing(4)
   },
   rightContainer: {
+    margin: "auto",
     [theme.breakpoints.up("md")]: {
       width: "50%",
+      padding: theme.spacing(4)
     },
     [theme.breakpoints.down("md")]: {
       width: "100%",
       display: "flex",
       flexDirection: "column",
       textAlign: "center",
+      margin: "auto"
     },
-    margin: "auto",
-    padding: theme.spacing(4)
   },
   button: {
     marginTop: theme.spacing(2),
@@ -98,7 +100,7 @@ const Waitlist = () => {
             To participate in Stag DAO join our community on Discord and earn your place on our whitelist.
           </Typography>
 
-          <a className={classes.link} href="https://discord.com/invite/StagDAO" target="_blank">
+          <a className={classes.link} rel="noopener noreferrer" href="https://discord.com/invite/StagDAO" target="_blank">
             <Button
               className={classes.button}
               variant="contained"

@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 import { Box, Typography, Divider } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  summary: {
     [theme.breakpoints.up("md")]: {
       width: "100%",
       height: "auto",
@@ -77,7 +77,7 @@ const Summary = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div id="summary" className={classes.summary}>
       <Box className={classes.container}>
         <img alt="" src="/images/summary-background.png"></img>
         <Typography variant="h1" className={classes.title}>
