@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
-import Steps from "../Steps";
+import Hero from "../Sections/Hero";
+import Footer from "./Footer";
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -8,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     top: "0",
     left: "0",
+    margin: "0",
     width: '100%',
     minHeight: '100%',
     display: 'flex',
@@ -29,7 +31,9 @@ const Layout = ({ children }) => {
     <div className={classes.root}>
       <Header />
       
-      <Steps />
+      <Hero />
+
+      <Footer />
     </div>
   )
 }

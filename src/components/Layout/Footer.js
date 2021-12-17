@@ -1,30 +1,32 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
-import { Typography, Link, Box } from "@mui/material";
+import { Link, Box } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    position: "relative",
+    position: "absolute",
+    bottom: "0",
+    left: "0",
     display: 'flex',
     alignItems: 'center',
     lineHeight: '19px',
     zIndex: 100,
-    backgroundColor: "#fff"
+    backgroundColor: "transparent"
   },
   container: {
     height: "200px",
     margin: "auto",
     display: "flex",
     [theme.breakpoints.up("xl")]: {
-      justifyContent: "space-between",
-      alignItems: "center",
-      width: "70%",
-    },
-    [theme.breakpoints.up("sm")]: {
-      justifyContent: "space-between",
+      justifyContent: "left",
       alignItems: "center",
       width: "60%",
+    },
+    [theme.breakpoints.up("sm")]: {
+      justifyContent: "left",
+      alignItems: "center",
+      width: "70%",
     },
     [theme.breakpoints.down("md")]: {
       width: "90%",
@@ -62,13 +64,26 @@ const useStyles = makeStyles((theme) => ({
   },
   row: {
     display: "flex",
-    flexDirection: "row",
+    [theme.breakpoints.up("md")]: {
+      flexDirection: "row",
+    },
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+      marginBottom: theme.spacing(1)
+    },
     "& > a": {
-      marginRight: theme.spacing(1)
+      marginRight: theme.spacing(2)
     },
     "& > a > img": {
-      width: "30px",
-      paddingRight: theme.spacing(1)
+      width: "auto",
+      height: "35px",
+      paddingRight: theme.spacing(1),
+      [theme.breakpoints.down("md")]: {
+        paddingBottom: theme.spacing(2)
+      },
+      [theme.breakpoints.up("md")]: {
+        paddingRight: theme.spacing(3)
+      },
     }
   },
   social: {
@@ -90,38 +105,15 @@ const Footer = () => {
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        <div className={classes.logo}>
-          <img className={classes.image} src="/images/stag-logo-dark.png" alt=""></img>
-          <img className={classes.text} src="/images/stag-logo-text-dark.png" alt=""></img>
-        </div>
-
-        <Box className={classes.social}>
-          <Typography className={classes.title} variant="subtitle1">
-            Social links
-          </Typography>
-          <Box className={classes.row}>
-            <Link target="_blank" rel="noreferrer" href="https://discord.com/invite/StagDAO">
-              <img alt="" href="" src="/images/discord-dark.png"></img>
-            </Link>
-            <Link target="_blank" rel="noreferrer" href="https://twitter.com/stagDAO">
-              <img alt="" href="" src="/images/twitter.png"></img>
-            </Link>
-          </Box>
-        </Box>
-
-        <Box className={classes.docs}>
-          <Typography className={classes.title} variant="subtitle1">
-            Reading
-          </Typography>
-          <Link target="_blank" rel="noreferrer" href="https://documents.stagdao.finance/start">
-            <Typography>
-              Documentation
-            </Typography>
+        <Box className={classes.row}>
+          <Link target="_blank" rel="noreferrer" href="https://twitter.com/stagDAO">
+            <img alt="" href="" src="/images/twitter.png"></img>
           </Link>
-          <Link target="_blank" rel="noreferrer" href="https://medium.com/stag-dao">
-            <Typography>
-              Medium
-            </Typography>
+          <Link target="_blank" rel="noreferrer" href="https://documents.stagdao.finance/start">
+            <img alt="" href="" src="/images/docs.png"></img>
+          </Link>
+          <Link target="_blank" rel="noreferrer" href="https://discord.com/invite/StagDAO">
+            <img alt="" href="" src="/images/discord.png"></img>
           </Link>
         </Box>
       </div>

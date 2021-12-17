@@ -12,19 +12,17 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: [
-      'Red Hat Display',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
+      'Quasimoda',
       'sans-serif'
     ].join(','),
     h1: {
       fontWeight: "900",
-      fontSize: "2.7em"
+      fontSize: "3em",
+      color: "#D8BF95"
     },
     subtitle1: {
       fontWeight: "400",
-      fontSize: "1.2em"
+      fontSize: "1.4em"
     },
     subtitle2: {
       fontWeight: 500,
