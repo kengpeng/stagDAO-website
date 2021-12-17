@@ -28,11 +28,16 @@ const useStyles = makeStyles((theme) => ({
   logo: {
     display: 'inline-flex',
     alignItems: 'center',
-    justifyContent: "flex-start",
+    [theme.breakpoints.down("sm")]: {
+      margin: "auto",
+    },
+    [theme.breakpoints.up("sm")]: {
+      justifyContent: "flex-start",
+    }
   },
   image: {
-    width: "54px",
-    height: "73px",
+    width: "72px",
+    height: "100px",
     paddingRight: theme.spacing(2)
   },
   text: {

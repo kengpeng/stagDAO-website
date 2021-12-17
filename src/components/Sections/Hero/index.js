@@ -46,20 +46,28 @@ const useStyles = makeStyles((theme) => ({
   leftContent: {
     display: "flex",
     flexDirection: "column",
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("sm")]: {
       justifyContent: "center",
       width: "60%",
     },
-    [theme.breakpoints.down("md")]: {
-      width: "90%",
-      paddingTop: "200px"
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+      paddingTop: "70%",
+      width: "100%",
+      fontSize: "0.7em"
     },
     color: theme.palette.secondary.main,
   },
   rightContent: {
     position: "absolute",
     bottom: "0",
-    right: "0",
+    [theme.breakpoints.up("sm")]: {
+      right: "0",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "-28px",
+      overflow: "visible"
+    },
     "& > img": {
       width: "645px",
       height: "741px",
@@ -69,8 +77,8 @@ const useStyles = makeStyles((theme) => ({
         height: "471px",
       },
       [theme.breakpoints.down("sm")]: {
-        width: "275px",
-        height: "321px",
+        width: "200px",
+        height: "241px",
       },
     }
   }
@@ -84,7 +92,7 @@ const Hero = () => {
       <Box className={classes.container}>
         <Box className={classes.leftContent}>
           <Typography variant="subtitle1">
-            Real value for real utility
+            Real value for real utility.
           </Typography>
           <Typography variant="h1">
             Coming soon.

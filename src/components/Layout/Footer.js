@@ -12,7 +12,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     lineHeight: '19px',
     zIndex: 100,
-    backgroundColor: "transparent"
+    backgroundColor: "transparent",
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "70%"
+    },
   },
   container: {
     height: "200px",
@@ -47,11 +50,6 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(2)
     }
   },
-  image: {
-    width: "54px",
-    height: "70px",
-    paddingRight: theme.spacing(2)
-  },
   title: {
     paddingBottom: theme.spacing(1.5),
     [theme.breakpoints.down("sm")]: {
@@ -64,25 +62,25 @@ const useStyles = makeStyles((theme) => ({
   },
   row: {
     display: "flex",
-    [theme.breakpoints.up("md")]: {
+    flexDirection: "row",
+    [theme.breakpoints.down("sm")]: {
       flexDirection: "row",
-    },
-    [theme.breakpoints.down("md")]: {
-      flexDirection: "column",
-      marginBottom: theme.spacing(1)
-    },
-    "& > a": {
-      marginRight: theme.spacing(2)
+      marginBottom: theme.spacing(1),
+      margin: "auto",
     },
     "& > a > img": {
       width: "auto",
       height: "35px",
-      paddingRight: theme.spacing(1),
-      [theme.breakpoints.down("md")]: {
-        paddingBottom: theme.spacing(2)
-      },
+      paddingRight: theme.spacing(3),
       [theme.breakpoints.up("md")]: {
-        paddingRight: theme.spacing(3)
+        paddingRight: theme.spacing(6),
+      },
+      [theme.breakpoints.down("md")]: {
+        paddingBottom: theme.spacing(2),
+        height: "25px",
+      },
+      [theme.breakpoints.down("sm")]: {
+        paddingLeft: theme.spacing(3),
       },
     }
   },
