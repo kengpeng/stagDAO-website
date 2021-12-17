@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     width: "54px",
-    height: "70px",
+    height: "73px",
     paddingRight: theme.spacing(2)
   },
   text: {
